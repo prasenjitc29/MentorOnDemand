@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+      body,html{
+        height: 100%;
+      }
+      section:nth-child(even) {
+        background-color: grey;
+      }
+      .section {
+        width: 100%;
+        min-height: 100%;
+        padding-top: 95px;
+      }
+
+      .progress {
+        border-width: 10px;
+      }
+
+      .fa {
+        color: white;
+      }
+
+      .intro {
+        background-image: url("Learning.jpg");
+        background-size: cover;
+        background-position: center center;
+      }
+      .chip {
+        display: inline-block;
+        padding: 0 25px;
+        height: 50px;
+        font-size: 16px;
+        line-height: 50px;
+        border-radius: 25px;
+        background-color: #f1f1f1;
+      }
+      .closebtn {
+        padding-left: 10px;
+        color: #888;
+        font-weight: bold;
+        float: right;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .chipContainer {        
+        
+        border-style: groove;
+        overflow: hidden;
+        padding: 10px 10px;
+      }
+
+    </style>
+
+    <title>Trainer</title>
+  </head>
+  <body>
+    <nav id="myNav" class="navbar navbar-dark bg-dark fixed-top navbar-expand-lg">
+      <img class="navbar-brand img-fluid mr-4" height=40px width=40px src="Logo.png">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navBarMain" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navBarMain">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="#profile" class="nav-link">Profile</a></li>
+          <li class="nav-item ml-3"><a href="#Notifications" class="nav-link">Notifications</a></li>          
+          <i  class="fa fa-sign-out fa-2x ml-3" data-toggle="tooltip" data-placement="bottom" title="Logout" aria-hidden="true"></i>        
+        </ul>
+
+         <ul class="navbar-nav mr-auto">
+          <li class="nav-item mr-4"><a href="#currentTrainings" class="nav-link">CurrentTrainings</a></li>
+          <li class="nav-item mr-4"><a href="#completedTrainings" class="nav-link">CompletedTrainings</a></li>
+          <li class="nav-item"><a href="#editSkills" class="nav-link">EditSkills</a></li>          
+        </ul>
+        
+      </div>
+
+    </nav>  
+    
+      <section id="profile" class="section">
+        <section class="jumbotron section intro">
+        <div class="center">
+          <div class="container text-sm-center">
+            <!-- <div class="display-4">E-Learnings</div> -->
+            <div class="mt-5">Welcome to LTI E-Learnings.</div>
+          </div>
+        </div>
+      </section>
+        <div class="container bg-success">
+          <h3>About</h3>
+          <p>
+            Put simply, all of the different types and kinds of paragraphs simply involve layering on a different purpose or intent. When students have the right foundation, it’s just that simple. What are you trying to achieve in this paragraph and in your whole composition? What is your purpose right here? Do you wish to describe? Do you want to evaluate? Is your goal to narrate? Is your intent to persuade.
+          </p>
+         </div>
+      </section> 
+      <section id="currentTrainings" class="section"></h3>
+        <div class="container">
+          <div class=""><h4>Current Trainings</h4></div>
+         
+          <div class="row">
+            <div class="col-lg-4 mt-4">
+              <div class="card">
+                <h4 class="card-header">Complete Java Basics For Begineers</h4>
+                <img  src="https://via.placeholder.com/50" alt="">
+                <div class="card-body">
+                  <div class="card-title">
+                    <div class="text-center">Weekday Batch 2PM - 3PM</div>
+                    <div class="card-text">
+                      <p></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="container">
+                    <div class="progress">
+                      <div class="progress-bar w-50 progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">70%
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4 d-flex">
+              <div class="card">
+                <h4 class="card-header">Complete UI Basics For Begineers</h4>
+                <img  src="https://via.placeholder.com/50" alt="">
+                <div class="card-body">
+                  <div class="card-title">
+                     <div class="text-center">Weekend Batch 2PM - 3PM</div>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <div class="container">
+                    <div class="progress">
+                      <div class="progress-bar w-50 progress-bar-striped" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">70%
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4 d-flex">
+              <div class="card">
+                <h4 class="card-header">Advanced Java Concepts With Threads</h4>
+                <img  src="https://via.placeholder.com/50" alt="">
+                <div class="card-body">
+                  <div class="card-title">
+                     <div class="text-center">Weekday Batch 2AM - 3AM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4 d-flex">
+              <div class="card">
+                <h4 class="card-header">Spring Concepts For Begineers</h4>
+                <img  src="https://via.placeholder.com/50" alt="">
+                <div class="card-body">
+                  <div class="card-title">
+                     <div class="text-center">Weekend Batch 2AM - 3AM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4 d-flex">
+              <div class="card">
+                <h4 class="card-header">Spring Concepts For Begineers</h4>
+                <img  src="https://via.placeholder.com/50" alt="">
+                <div class="card-body">
+                  <div class="card-title">
+                     <div class="text-center">Fasttrack 3PM - 8PM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4 mt-4 d-flex">
+              <div class="card">
+                <h4 class="card-header">Spring Microservices Advanced</h4>
+                <img  src="https://via.placeholder.com/50" alt="">
+                <div class="card-body">
+                  <div class="card-title">
+                     <div class="text-center">Fasttrack 3PM - 8PM</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+      <section id="completedTrainings" class="section container mt-5">
+        <h3>Completed Trainings</h3>
+    
+
+        
+        <table id="example" class="table table-striped table-bordered" style="width:100%">
+        <thead>
+            <tr>
+                <th>Course</th>
+                <th>Batch Code</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Payment</th>
+                <th>Ratings</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td>$86,000</td>
+            </tr>
+            <tr>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                <td>$433,060</td>
+            </tr>
+            <tr>
+                <td>Airi Satou</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>2008/11/28</td>
+                <td>$162,700</td>
+            </tr>
+            <tr>
+                <td>Brielle Williamson</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2012/12/02</td>
+                <td>$372,000</td>
+            </tr>
+           </tbody>
+          </table>  
+
+
+
+
+
+      </section>
+      <section id="editSkills" class="section container">
+        <h3>EditSkills</h3>
+        <div class="chipContainer w-75 m-auto mb-4">
+          <div class="container">
+            <div class="chip mb-2 mr-1">
+              Java
+              <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+            <div class="chip">
+              Spring
+              <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>
+            <div class="chip">
+              HTML
+              <span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span>
+            </div>            
+            </div>
+         </div>
+        </div>
+        <div class="skillContainer mt-4 ml-5">
+          <div> 
+            <input id = "searchinput" name="skills" type="text" placeholder="Search skills.."> 
+          </div>  
+          <div class="suggestions"> 
+            
+          </div>        <!-- autotext box -->
+
+        <div>
+      </section>
+      <footer></footer>
+   
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+      $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <script>
+      $("body").scrollspy({
+        target:"#myNav"
+      })
+    </script>
+    <!-- <script type="text/javascript" src="scripts.js"></script> -->
+  </body>
+</html>
