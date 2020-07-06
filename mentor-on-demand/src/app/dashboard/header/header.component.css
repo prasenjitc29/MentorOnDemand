@@ -1,0 +1,16 @@
+.card-img-top {
+    width: 100%;
+    height: 7vw;
+    object-fit: cover;
+}
+.checked {
+    color: orange;
+}
+
+.sticky-top {
+    padding-top: 15px;
+    z-index: 1;
+}
+.top-navbar{
+    z-index: 2;
+}
