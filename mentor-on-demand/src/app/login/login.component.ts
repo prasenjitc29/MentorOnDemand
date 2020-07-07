@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     if (this.authService.currentUserValue) { 
-      this.router.navigate(['']);
+      this.router.navigate(['/trainee']);
     }
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '';
   }

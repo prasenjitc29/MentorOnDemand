@@ -16,17 +16,17 @@ const routes: Routes = [
     children: [
       {
         path:"admin",
-        component: AdminComponent,
-        canActivate: [AuthGuard],
-        data: { roles: [Role.Admin] }
+        canActivateChild: [AuthGuard],
+        data: { roles: [Role.Admin] },
+        loadChildren: () => import("./admin/admin.module").then(module => module.AdminModule)
       },
       {
         path:"mentor",
-        component: MentorComponent
+        loadChildren: () => import("./mentor/mentor.module").then(module => module.MentorModule)
       },
       {
         path:"trainee",
-        component: TraineeComponent
+       loadChildren: () => import("./trainee/trainee.module").then(module => module.TraineeModule)
       }
     ]
   }

@@ -6,7 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-
+  navLinks =[{path:"/admin",label:"Admin Home"},
+  {path:"users",label:"All Users"},
+  {
+    path:"training",
+    label: "All Trainings"
+  },
+  {
+    path:"skills",
+    label: "Add/Remove Skills"
+  }
+ ];
   constructor() { }
 
   ngOnInit() {

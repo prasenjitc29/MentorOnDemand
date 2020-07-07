@@ -5,14 +5,11 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
 import { DashboardComponent } from './dashboard.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { AdminComponent } from './admin/admin.component';
-import { MentorComponent } from './mentor/mentor.component';
-import { TraineeComponent } from './trainee/trainee.component';
 import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [DashboardComponent, HeaderComponent, FooterComponent, AdminComponent, MentorComponent, TraineeComponent],
+  declarations: [DashboardComponent, HeaderComponent, FooterComponent],
   imports: [
     CommonModule,
     SharedModule,

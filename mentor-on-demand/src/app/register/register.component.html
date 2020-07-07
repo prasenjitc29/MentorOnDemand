@@ -6,52 +6,81 @@
                 
             </div>
             <div class="card-body p-5">
-                <form>
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="First Name">
-                        
+                        <input type="text" formControlName="fName" class="form-control" placeholder="First Name" [ngClass]="{ 'is-invalid': formControls.fName.touched && formControls.fName.errors }">
+                        <div *ngIf="formControls.fName.touched && formControls.fName.errors" class="invalid-feedback">
+                            <div *ngIf="formControls.fName.errors.required">First Name is required</div>
+                        </div>
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-user"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="Last Name">
+                        <input type="text" formControlName="lName" class="form-control" placeholder="Last Name" [ngClass]="{ 'is-invalid': formControls.lName.touched && formControls.lName.errors }">
+                        <div *ngIf="formControls.lName.touched && formControls.lName.errors" class="invalid-feedback">
+                            <div *ngIf="formControls.lName.errors.required">Last Name is required</div>
+                        </div>
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-address-card"></i></span>
                         </div>
-                        <input type="text" class="form-control" placeholder="User Name">
+                        <input type="text" formControlName="userName" class="form-control" placeholder="User Name" [ngClass]="{ 'is-invalid': formControls.userName.touched && formControls.userName.errors }">
+                        <div *ngIf="formControls.userName.touched && formControls.userName.errors" class="invalid-feedback">
+                            <div *ngIf="formControls.userName.errors.required">User Name is required</div>
+                        </div>
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-address-card"></i></span>
+                        </div>
+                        <input type="text" formControlName="email" class="form-control" placeholder="Email" [ngClass]="{ 'is-invalid': formControls.email.touched && formControls.email.errors }">
+                        <div *ngIf="formControls.email.touched && formControls.email.errors" class="invalid-feedback">
+                            <div *ngIf="formControls.email.errors.required">Email is required</div>
+                            <div *ngIf="formControls.email.errors.email">Enter valid email</div>
+                        </div>
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-globe"></i></span>
                         </div>
-                        <select id="inputState" class="form-control">
-                            <option selected>Choose Course</option>
-                            <option>Java</option>
-                            <option>CSS</option>
-                            <option>Spring</option>
+                        <select formControlName="course" id="inputState" class="form-control" [ngClass]="{ 'is-invalid': formControls.course.touched && formControls.course.errors }">
+                            <option  value="0" selected>Choose Course</option>
+                            <option value="1">Java</option>
+                            <option value="2">CSS</option>
+                            <option value="3">Spring</option>
                           </select>
+                          <div *ngIf="formControls.course.touched && formControls.course.errors" class="invalid-feedback">
+                            <div *ngIf="formControls.course.errors.required">Course is required</div>
+                        </div>
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input formControlName="password" type="password" class="form-control" placeholder="Password" [ngClass]="{ 'is-invalid': formControls.password.touched && formControls.password.errors }">
+                        <div *ngIf="formControls.password.touched && formControls.password.errors" class="invalid-feedback">
+                            <div *ngIf="formControls.password.errors.required">Field is required</div>
+                            <div *ngIf="formControls.password.errors.minlength">Password must be at least 6 characters</div>
+                        </div>
                     </div>
                     <div class="input-group form-group">
                         <div class="input-group-prepend">
                             <span class="input-group-text"><i class="fa fa-key"></i></span>
                         </div>
-                        <input type="password" class="form-control" placeholder="Re-Password">
+                        <input formControlName="confirmPassword" type="password" class="form-control" placeholder="Confirm Password"  [ngClass]="{ 'is-invalid': formControls.confirmPassword.touched && formControls.confirmPassword.errors }">
+                        <div *ngIf="formControls.confirmPassword.touched && formControls.confirmPassword.errors" class="invalid-feedback">
+                            <div *ngIf="formControls.confirmPassword.errors.required">Field is required</div>
+                            <div *ngIf="formControls.confirmPassword.errors.mustMatch">Passwords must match</div>
+                        </div>
                     </div>
                     
                     <div class="form-group">
-                        <input type="submit" value="Sign Up" class="btn float-right login_btn">
+                        <input [disabled]="!registerForm.valid" type="submit" value="Sign Up" class="btn float-right login_btn">
                     </div>
                 </form>
             </div>

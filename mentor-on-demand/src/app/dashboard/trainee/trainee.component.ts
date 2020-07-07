@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TraineeComponent implements OnInit {
 
+  navLinks =[{path:"/trainee",label:"Trainings"},
+  {path:"completed",label:"Completed"},
+  {
+    path:"inprogress",
+    label: "In Progress"
+  }
+ ];
   constructor() { }
 
   ngOnInit() {
