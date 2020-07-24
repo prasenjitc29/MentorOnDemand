@@ -1,17 +1,11 @@
-package com.lti.mod.searchservice.dto;
+package com.mentorondemand.admin.dto;
 
 import java.math.BigDecimal;
 
-import io.searchbox.annotations.JestId;
-import io.searchbox.annotations.JestVersion;
 
-public class CourseDTO {
-	@JestId
+public class CourseIndexDTO {
 	private String couseId;
-
-	@JestVersion
 	private Long documentVersion;
-	
 	private String courseName;
 	private Integer skillId;
 	private Integer batchId;

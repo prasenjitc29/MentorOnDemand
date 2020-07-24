@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lti.mod.searchservice.dto.CourseDTO;
+import com.lti.mod.searchservice.dto.CourseIndexDTO;
 import com.lti.mod.searchservice.service.SearchService;
 
 import io.searchbox.core.SearchResult.Hit;
@@ -26,7 +26,7 @@ public class SearchController {
 	SearchService searchService;
 	
 	@PostMapping("/courses")
-	public ResponseEntity<HttpStatus> createIndex(@RequestBody CourseDTO course) throws Exception{
+	public ResponseEntity<HttpStatus> createIndex(@RequestBody CourseIndexDTO course) throws Exception{
 		searchService.createUpdateIndex(course);
 		return ResponseEntity.status(HttpStatus.CREATED).build();
 	}
@@ -38,23 +38,23 @@ public class SearchController {
 //	}
 	
 	@PutMapping("/courses")
-	public ResponseEntity<String> updateIndex(@RequestBody CourseDTO course) throws Exception{
+	public ResponseEntity<String> updateIndex(@RequestBody CourseIndexDTO course) throws Exception{
 		searchService.createUpdateIndex(course);
 		return ResponseEntity.ok("Update successfully");
 	}
 	
 	@GetMapping("/courses")
-	public ResponseEntity<List<CourseDTO>> getAllCourses() throws Exception{
+	public ResponseEntity<List<CourseIndexDTO>> getAllCourses() throws Exception{
 		return ResponseEntity.ok(searchService.getAllCourses());
 	}
 	
 	@GetMapping("/courses/{id}")
-	public ResponseEntity<CourseDTO> getCourseById(@PathVariable String id) throws Exception{
+	public ResponseEntity<CourseIndexDTO> getCourseById(@PathVariable String id) throws Exception{
 		return ResponseEntity.ok(searchService.getCourseById(id));
 	}
 	
 	@GetMapping("/courses/{query}/search")
-	public ResponseEntity<List<CourseDTO>> searchCourse() throws Exception{
+	public ResponseEntity<List<CourseIndexDTO>> searchCourse() throws Exception{
 		///Incompleted method...Search with any text should be implemented here
 		return ResponseEntity.ok(searchService.getAllCourses());
 	}

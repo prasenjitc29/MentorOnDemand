@@ -22,7 +22,7 @@ import io.searchbox.indices.CreateIndex;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.lti.mod.searchservice.dto.CourseDTO;
+import com.lti.mod.searchservice.dto.CourseIndexDTO;
 import com.lti.mod.searchservice.exception.IndexFailed;
 
 @Service
@@ -33,12 +33,12 @@ public class SearchService {
 	@Autowired
 	JestClient jestClient;
 
-	public void createUpdateIndex(CourseDTO course) throws Exception  {
+	public void createUpdateIndex(CourseIndexDTO course) throws Exception  {
 			
 			JestResult jestResult = 
 					jestClient.execute(new Index.Builder(course).index(INDEX_NAME).type(TYPE).build());
 			if (jestResult.isSucceeded()) {
-			    System.out.println("Success!");
+			    System.out.println(jestResult);
 			}
 			else {
 			    System.out.println("Error: " + jestResult.getErrorMessage());
@@ -47,7 +47,7 @@ public class SearchService {
 
 	}
 	
-	public List<CourseDTO> getAllCourses() throws Exception  {
+	public List<CourseIndexDTO> getAllCourses() throws Exception  {
 		SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
 //		searchSourceBuilder.query(QueryBuilders.matchQuery("user", "kimchy"));
 		searchSourceBuilder.query(QueryBuilders.matchAllQuery());
@@ -57,19 +57,19 @@ public class SearchService {
 		                                .build();
 
 		SearchResult result = jestClient.execute(search);
-		return result.getHits(CourseDTO.class)
+		return result.getHits(CourseIndexDTO.class)
 					.stream()
 					.map(hit -> hit.source)
 					.collect(Collectors.toList());
 
 	}
 	
-	public CourseDTO getCourseById(String id) throws Exception  {
+	public CourseIndexDTO getCourseById(String id) throws Exception  {
 		Get get = new Get.Builder(INDEX_NAME, id).type(TYPE).build();
 
 		JestResult result = jestClient.execute(get);
 
-		return result.getSourceAsObject(CourseDTO.class);
+		return result.getSourceAsObject(CourseIndexDTO.class);
 	}
 	
 	
