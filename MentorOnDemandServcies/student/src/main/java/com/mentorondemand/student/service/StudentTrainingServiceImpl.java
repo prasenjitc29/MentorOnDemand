@@ -1,11 +1,15 @@
 package com.mentorondemand.student.service;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import com.mentorondemand.student.domain.StudentTraining;
+import com.mentorondemand.student.dto.CourseIndexDTO;
 import com.mentorondemand.student.dto.StudentTrainingDTO;
 import com.mentorondemand.student.mapper.StudentTrainingMapper;
 import com.mentorondemand.student.repository.StudentTrainingRepository;
@@ -23,6 +27,17 @@ public class StudentTrainingServiceImpl implements StudentTrainingService{
 		StudentTraining training = mapper.dtoToStudentTraining(trainingDTO);
 		training = repository.save(training);
 		return mapper.studentTrainingToDto(training);
+	}
+	
+	@Async
+	private  void indexCourse(StudentTraining training)
+	{
+//		CourseIndexDTO courseIndexDTO = new CourseIndexDTO();
+//		courseIndexDTO.setTrainees(new Lis);
+//		courseIndexDTO.setUserName(training.getUserId().toString());
+////		courseIndexDTO.setMentorName(mentorName);
+//	    restTemplate.postForObject( SEARCH_SERVICE, courseIndexDTO, ResponseEntity.class);
+	 
 	}
 
 	public StudentTrainingDTO updateStudentTraining(StudentTrainingDTO trainingDTO) {

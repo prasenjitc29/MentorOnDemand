@@ -4,16 +4,18 @@ import java.math.BigDecimal;
 
 public class StudentTrainingDTO {
 	
-	private Integer id;
 	private Integer userId;
 	private Integer mentorTrainingId;
 	private BigDecimal ratings;
-	private String courseApprovalStatus;
-	public Integer getId() {
-		return id;
+	private String approvalStatus;
+	
+	
+	
+	public String getApprovalStatus() {
+		return approvalStatus;
 	}
-	public void setId(Integer id) {
-		this.id = id;
+	public void setApprovalStatus(String approvalStatus) {
+		this.approvalStatus = approvalStatus;
 	}
 	public Integer getUserId() {
 		return userId;
@@ -33,17 +35,15 @@ public class StudentTrainingDTO {
 	public void setRatings(BigDecimal ratings) {
 		this.ratings = ratings;
 	}
-	public String getCourseApprovalStatus() {
-		return courseApprovalStatus;
-	}
-	public void setCourseApprovalStatus(String courseApprovalStatus) {
-		this.courseApprovalStatus = courseApprovalStatus;
-	}
 	@Override
 	public String toString() {
-		return "StudentTrainingDTO [id=" + id + ", userId=" + userId + ", mentorTrainingId=" + mentorTrainingId
-				+ ", ratings=" + ratings + ", courseApprovalStatus=" + courseApprovalStatus + "]";
+		return "StudentTrainingDTO [userId=" + userId + ", mentorTrainingId=" + mentorTrainingId + ", ratings="
+				+ ratings + "]";
 	}
+	
+	
+	
+	
 	
 	
 

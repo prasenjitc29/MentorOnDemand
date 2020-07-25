@@ -1,6 +1,7 @@
 package com.lti.mod.searchservice.dto;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import io.searchbox.annotations.JestId;
 import io.searchbox.annotations.JestVersion;
@@ -20,9 +21,19 @@ public class CourseIndexDTO {
 	private String batchName;
 	private String skillName;
 	private String userName;
+	private String mentorName;
+	private String mentorImage;
+	private List<StudentTrainingDTO> trainees;
+	private String courseApprovalStatus;
 	
 	
 	
+	public String getCourseApprovalStatus() {
+		return courseApprovalStatus;
+	}
+	public void setCourseApprovalStatus(String courseApprovalStatus) {
+		this.courseApprovalStatus = courseApprovalStatus;
+	}
 	public String getCouseId() {
 		return couseId;
 	}
@@ -83,13 +94,34 @@ public class CourseIndexDTO {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+	public String getMentorName() {
+		return mentorName;
+	}
+	public void setMentorName(String mentorName) {
+		this.mentorName = mentorName;
+	}
+	public String getMentorImage() {
+		return mentorImage;
+	}
+	public void setMentorImage(String mentorImage) {
+		this.mentorImage = mentorImage;
+	}
+	public List<StudentTrainingDTO> getTrainees() {
+		return trainees;
+	}
+	public void setTrainees(List<StudentTrainingDTO> trainees) {
+		this.trainees = trainees;
+	}
 	@Override
 	public String toString() {
-		return "CourseDTO [couseId=" + couseId + ", documentVersion=" + documentVersion + ", courseName=" + courseName
-				+ ", skillId=" + skillId + ", batchId=" + batchId + ", studentFee=" + studentFee + ", mentorShare="
-				+ mentorShare + ", batchName=" + batchName + ", skillName=" + skillName + ", userName=" + userName
-				+ "]";
+		return "CourseIndexDTO [couseId=" + couseId + ", documentVersion=" + documentVersion + ", courseName="
+				+ courseName + ", skillId=" + skillId + ", batchId=" + batchId + ", studentFee=" + studentFee
+				+ ", mentorShare=" + mentorShare + ", batchName=" + batchName + ", skillName=" + skillName
+				+ ", userName=" + userName + ", mentorName=" + mentorName + ", mentorImage=" + mentorImage
+				+ ", trainees=" + trainees + "]";
 	}
+	
+	
 	
 	
 }

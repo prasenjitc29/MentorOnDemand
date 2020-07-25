@@ -16,4 +16,5 @@ public class BatchDTO {
 		this.batchName = batchName;
 	}
 	
+	
 }

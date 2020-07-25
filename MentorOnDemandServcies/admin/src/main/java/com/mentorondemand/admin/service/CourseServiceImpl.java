@@ -9,10 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.mentorondemand.admin.domain.Course;
-import com.mentorondemand.admin.dto.BatchDTO;
 import com.mentorondemand.admin.dto.CourseDTO;
 import com.mentorondemand.admin.dto.CourseIndexDTO;
-import com.mentorondemand.admin.dto.SkillDTO;
 import com.mentorondemand.admin.mapping.CourseMapper;
 import com.mentorondemand.admin.repository.CourseRepository;
 
@@ -60,7 +58,7 @@ public class CourseServiceImpl implements CourseService{
 	    restTemplate.postForObject( SEARCH_SERVICE, courseIndexDTO, ResponseEntity.class);
 	 
 	}
-	
+
 	public CourseDTO updateCourse(CourseDTO courseDTO) {
 		Course course = courseMapper.courseDtoToCourse(courseDTO);
 		course = courseRepository.save(course);

@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @SpringBootApplication
 //@EnableJpaRepositories
 //@EnableTransactionManagement
-//@EnableDiscoveryClient
+@EnableDiscoveryClient
 public class AdminApplication {
 
 	public static void main(String[] args) {
@@ -23,5 +23,4 @@ public class AdminApplication {
 	public RestTemplate restTemplate(RestTemplateBuilder builder) {
 		return builder.build();
 	}
-
 }

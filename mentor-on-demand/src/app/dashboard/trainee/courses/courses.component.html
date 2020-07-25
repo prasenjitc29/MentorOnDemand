@@ -1,0 +1,30 @@
+<div class="container">
+    <mat-grid-list cols="4" gutterSize="30px"  rowHeight="4:5">
+
+    <mat-grid-tile *ngFor="let course of courses" >
+        <mat-card class="example-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{course.courseName}}</mat-card-title>
+              <mat-card-subtitle>{{course.mentorName}}</mat-card-subtitle>
+            </mat-card-header>
+            <!-- <img mat-card-image width="100px" height="100px" src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+            <mat-card-content>
+              <p>
+               <span>Course name : {{course.courseName}}</span> <br>
+               <span>Trainer: {{course.mentorName}}</span> <br>
+               <span>Batch Time :{{course.batchName}}</span> <br>
+               <span>Skill :{{course.skillName}}</span> <br>
+               <span>Course Fee :{{course.studentFee}}</span> 
+              </p>
+            </mat-card-content>
+            <mat-card-actions>
+              <button mat-raised-button>Rating</button>
+              <button mat-raised-button (click)="proposeCourse(course.couseId)"> Propose</button>
+            </mat-card-actions>
+          </mat-card>
+    </mat-grid-tile>
+    
+  </mat-grid-list>
+    
+</div>

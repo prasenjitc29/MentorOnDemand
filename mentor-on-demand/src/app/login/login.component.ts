@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['/trainee']);
     }
     this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '';
+    console.log(this.returnUrl);
   }
 
   login(loginForm:NgForm){
@@ -26,7 +27,11 @@ export class LoginComponent implements OnInit {
     .pipe(first())
     .subscribe(
       data =>{
-        this.router.navigate([this.returnUrl]);
+        
+        if(this.returnUrl === "/")
+        this.router.navigate(['/trainee']);
+        else
+          this.router.navigate([this.returnUrl]);
       }
     );
       
