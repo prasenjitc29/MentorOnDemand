@@ -18,6 +18,7 @@ public class CourseIndexDTO {
 	private String userName;
 	private String mentorName;
 	private String mentorImage;
+	private String courseStatus;
 	private List<StudentTrainingDTO> trainees;
 	
 	

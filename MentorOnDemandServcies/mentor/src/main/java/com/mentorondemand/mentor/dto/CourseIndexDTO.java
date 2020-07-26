@@ -15,25 +15,32 @@ public class CourseIndexDTO {
 	private BigDecimal mentorShare;
 	private String batchName;
 	private String skillName;
-	private String userName;
 	private String mentorName;
-	private String mentorImage;
+	private String courseImage;
+	private BigDecimal mentorFee;
+	private String userName;
+	private BigDecimal courseRating;
 	private List<StudentTrainingDTO> trainees;
 	
 	
-	
-	
+	public BigDecimal getCourseRating() {
+		return courseRating;
+	}
+	public void setCourseRating(BigDecimal courseRating) {
+		this.courseRating = courseRating;
+	}
 	public String getMentorName() {
 		return mentorName;
 	}
 	public void setMentorName(String mentorName) {
 		this.mentorName = mentorName;
 	}
-	public String getMentorImage() {
-		return mentorImage;
+	
+	public String getCourseImage() {
+		return courseImage;
 	}
-	public void setMentorImage(String mentorImage) {
-		this.mentorImage = mentorImage;
+	public void setCourseImage(String courseImage) {
+		this.courseImage = courseImage;
 	}
 	public List<StudentTrainingDTO> getTrainees() {
 		return trainees;
@@ -95,6 +102,13 @@ public class CourseIndexDTO {
 	public void setSkillName(String skillName) {
 		this.skillName = skillName;
 	}
+	
+	public BigDecimal getMentorFee() {
+		return mentorFee;
+	}
+	public void setMentorFee(BigDecimal mentorFee) {
+		this.mentorFee = mentorFee;
+	}
 	public String getUserName() {
 		return userName;
 	}
@@ -103,10 +117,11 @@ public class CourseIndexDTO {
 	}
 	@Override
 	public String toString() {
-		return "CourseDTO [couseId=" + couseId + ", documentVersion=" + documentVersion + ", courseName=" + courseName
-				+ ", skillId=" + skillId + ", batchId=" + batchId + ", studentFee=" + studentFee + ", mentorShare="
-				+ mentorShare + ", batchName=" + batchName + ", skillName=" + skillName + ", userName=" + userName
-				+ "]";
+		return "CourseIndexDTO [couseId=" + couseId + ", documentVersion=" + documentVersion + ", courseName="
+				+ courseName + ", skillId=" + skillId + ", batchId=" + batchId + ", studentFee=" + studentFee
+				+ ", mentorShare=" + mentorShare + ", batchName=" + batchName + ", skillName=" + skillName
+				+ ", mentorName=" + mentorName + ", courseImage=" + courseImage + ", mentorFee=" + mentorFee
+				+ ", userName=" + userName + ", trainees=" + trainees + "]";
 	}
 	
 	

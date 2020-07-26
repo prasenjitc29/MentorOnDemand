@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public class StudentTrainingDTO {
 	
-	private Integer userId;
+	private String userName;
 	private Integer mentorTrainingId;
 	private BigDecimal ratings;
 	private String approvalStatus;
@@ -17,11 +17,12 @@ public class StudentTrainingDTO {
 	public void setApprovalStatus(String approvalStatus) {
 		this.approvalStatus = approvalStatus;
 	}
-	public Integer getUserId() {
-		return userId;
+	
+	public String getUserName() {
+		return userName;
 	}
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 	public Integer getMentorTrainingId() {
 		return mentorTrainingId;
@@ -37,8 +38,8 @@ public class StudentTrainingDTO {
 	}
 	@Override
 	public String toString() {
-		return "StudentTrainingDTO [userId=" + userId + ", mentorTrainingId=" + mentorTrainingId + ", ratings="
-				+ ratings + "]";
+		return "StudentTrainingDTO [userName=" + userName + ", mentorTrainingId=" + mentorTrainingId + ", ratings="
+				+ ratings + ", approvalStatus=" + approvalStatus + "]";
 	}
 	
 	

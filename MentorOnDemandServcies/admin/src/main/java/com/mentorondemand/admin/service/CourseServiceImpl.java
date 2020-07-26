@@ -44,19 +44,21 @@ public class CourseServiceImpl implements CourseService{
 	@Async
 	private  void indexCourse(Course course)
 	{
-		CourseIndexDTO courseIndexDTO = new CourseIndexDTO();
-		courseIndexDTO.setCouseId(course.getId().toString());
-		courseIndexDTO.setCourseName(course.getCourseName());
-		courseIndexDTO.setStudentFee(course.getStudentFee());
-		courseIndexDTO.setMentorShare(course.getMentorShare());
-		//BatchDTO batch= batchService.getBatch(course.getBatchId());
-		//SkillDTO skill= skillService.getSkill(course.getSkillId());
-		courseIndexDTO.setBatchId(course.getBatchId());
-		//courseIndexDTO.setBatchName(batch.getBatchName());
-		courseIndexDTO.setSkillId(course.getSkillId());
-		//courseIndexDTO.setSkillName(skill.getSkillName());
-	    restTemplate.postForObject( SEARCH_SERVICE, courseIndexDTO, ResponseEntity.class);
-	 
+		try {
+			CourseIndexDTO courseIndexDTO = new CourseIndexDTO();
+			courseIndexDTO.setCouseId(course.getId().toString());
+			courseIndexDTO.setCourseName(course.getCourseName());
+			courseIndexDTO.setStudentFee(course.getStudentFee());
+			courseIndexDTO.setMentorShare(course.getMentorShare());
+			courseIndexDTO.setBatchName(batchService.getBatch(course.getBatchId()).getBatchName());
+			courseIndexDTO.setSkillName(skillService.getSkill(course.getSkillId()).getSkillName());
+			courseIndexDTO.setBatchId(course.getBatchId());
+			courseIndexDTO.setSkillId(course.getSkillId());
+			restTemplate.postForObject(SEARCH_SERVICE, courseIndexDTO, ResponseEntity.class);
+		} catch (Exception e) {
+
+		}
+
 	}
 
 	public CourseDTO updateCourse(CourseDTO courseDTO) {
