@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light top-navbar">
-    <a class="navbar-brand " href="#" [routerLink]="['/trainee']" ><span class="text-info h3" >Home</span> </a>
+    <a class="navbar-brand " href="#" [routerLink]="['/trainee']" ><span class="text-info h3" >LTI</span> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -28,13 +28,12 @@
 
         </ul>
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item" >
-                <!-- <span class="badge badge-pill badge-danger ml-3 mb-n3">1</span> -->
+            <!-- <li class="nav-item" >
                 <a class="nav-link" href="#" title="Become Trainer" data-placement="bottom" [routerLink]="['/trainee']" >Welcome {{user.userName}} </a>
-            </li>
+            </li> -->
             <li class="nav-item" *ngIf="mentorRole">
                 <!-- <span class="badge badge-pill badge-danger ml-3 mb-n3">1</span> -->
-                <a class="nav-link" href="#" title="Become Trainer" [routerLink]="['/mentor']">| Become Trainer</a>
+                <a class="nav-link" href="#" title="Become Trainer" [routerLink]="['/mentor']"> Become Trainer</a>
             </li>
             <li class="nav-item" *ngIf="adminRole">
                 <!-- <span class="badge badge-pill badge-danger ml-3 mb-n3">1</span> -->
@@ -46,10 +45,18 @@
                 <a class="nav-link" href="#" data-toggle="tooltip" title="Notification" data-placement="bottom"><i
                         class="fa fa-bell-o fa-lg" aria-hidden="true"></i><span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="tooltip" (click)="logout()" title="Logout" data-placement="bottom"><i
-                        class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i></a>
+            <li appDropdown #profile="appDropDown"  class="nav-item dropdown">
+                <a  class="nav-link dropdown-toggle"  id="navbarDropdown" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i> Welcome {{user.userName}}
+                </a>
+                <div  class="dropdown-menu" aria-labelledby="navbarDropdown" [ngClass]="{'show':profile.isOpen}" >
+                    <a class="dropdown-item" href="#">My Profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" (click)="logout()">Logout</a>
+                </div>
             </li>
+           
         </ul>
     </div>
 </nav>

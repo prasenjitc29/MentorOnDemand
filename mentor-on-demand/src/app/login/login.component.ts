@@ -3,6 +3,7 @@ import { AuthService } from '../auth/auth.service';
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { first } from 'rxjs/operators';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,8 @@ import { first } from 'rxjs/operators';
 export class LoginComponent implements OnInit {
 
   returnUrl:string;
-  constructor(private authService: AuthService,private router: Router,private route: ActivatedRoute) { }
+  constructor(private authService: AuthService,private router: Router,
+              private route: ActivatedRoute,private notification: NotificationService) { }
 
   ngOnInit() {
     if (this.authService.currentUserValue) { 
@@ -32,7 +34,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/trainee']);
         else
           this.router.navigate([this.returnUrl]);
-      }
+      },
+      // err => this.notification.showError("Something went wrong",err)
     );
       
     

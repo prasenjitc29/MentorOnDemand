@@ -40,9 +40,10 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
+import { RatingsComponent } from './ratings/ratings.component';
 
 @NgModule({
-  declarations: [DropdownDirective,TopMenuComponent],
+  declarations: [DropdownDirective,TopMenuComponent, RatingsComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -52,17 +53,8 @@ import {MatTreeModule} from '@angular/material/tree';
     FormsModule,
     ReactiveFormsModule,
     DropdownDirective,
+    RatingsComponent,
     TopMenuComponent,
-    // MatButtonModule,
-    // MatTabsModule,
-    // MatTableModule,
-    // MatToolbarModule,
-    // MatGridListModule,
-    // MatCardModule,
-    // MatTableModule,
-    // MatSortModule,
-    // MatPaginatorModule,
-    
     MatAutocompleteModule,
     MatBadgeModule,
     MatBottomSheetModule,
