@@ -8,11 +8,11 @@
 		<version>2.2.2.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.hos</groupId>
-	<artifactId>hos-gateway</artifactId>
+	<groupId>com.mentorondemand</groupId>
+	<artifactId>routing</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hos-gateway</name>
-	<description>Demo project for Spring Boot</description>
+	<name>routing-service</name>
+	<description>Gateway</description>
 
 	<properties>
 		<java.version>1.8</java.version>

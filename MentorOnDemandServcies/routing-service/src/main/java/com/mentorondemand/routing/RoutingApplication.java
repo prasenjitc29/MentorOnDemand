@@ -8,7 +8,12 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpMethod;
 import org.springframework.util.StringUtils;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.reactive.CorsConfigurationSource;
+import org.springframework.web.cors.reactive.CorsWebFilter;
+import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 
 import com.mentorondemand.routing.exception.JWTException;
 
@@ -29,17 +34,18 @@ public class RoutingApplication {
 	
 	@Bean
     public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
-		System.out.println("hello");
       
         		return builder.routes()
+				.route(r -> r.path("/api/search/**")
+	                    .uri("lb://search-service"))
                 .route(r -> r.path("/api/auth/**")
                         .uri("lb://user-service"))
                 .route(r -> r.path("/api/user/**")
                         .uri("lb://user-service"))
-                .route(r -> r.path("/api/admin**")
-                        .uri("lb://admin-service"))
-                .route(r -> r.path("/api/studenttraining/**")
-                        .uri("lb://student-service"))
+                .route(r -> r.path("/api/admin/**")
+                        .uri("lb://training-service"))
+                .route(r -> r.path("/api/enroll/**")
+                        .uri("lb://enrollment-service"))
                 .route(r -> r.path("/api/mentor/**")
                         .uri("lb://mentor-service"))
                 .build();
@@ -71,6 +77,27 @@ public class RoutingApplication {
 			}));
 		};
 	}
+	
+	@Bean
+    public CorsWebFilter corsFilter() {
+        return new CorsWebFilter(corsConfigurationSource());
+    }
+
+    @Bean
+    CorsConfigurationSource corsConfigurationSource() {
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = new CorsConfiguration().applyPermitDefaultValues();
+        config.addAllowedMethod(HttpMethod.PUT);
+        config.addAllowedMethod(HttpMethod.GET);
+        config.addAllowedMethod(HttpMethod.POST);
+        config.addAllowedMethod(HttpMethod.DELETE);
+        config.addAllowedMethod(HttpMethod.OPTIONS);
+        config.addAllowedOrigin(CorsConfiguration.ALL);
+        config.addAllowedHeader(CorsConfiguration.ALL);
+        source.registerCorsConfiguration("/**", config);
+        return source;
+    } 
+	
 	
 	private String parseJwt(String headerAuth) {
 			

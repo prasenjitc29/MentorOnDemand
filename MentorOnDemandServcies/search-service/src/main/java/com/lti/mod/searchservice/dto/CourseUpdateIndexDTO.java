@@ -1,17 +1,15 @@
 package com.lti.mod.searchservice.dto;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
+
 
 import io.searchbox.annotations.JestId;
 import io.searchbox.annotations.JestVersion;
 
-public class CourseIndexDTO {
-	
-	@JestId
-	private String couseId;
-
-	@JestVersion
+public class CourseUpdateIndexDTO {
+	private String courseId;
 	private Long documentVersion;
 	private String courseName;
 	private Integer skillId;
@@ -23,15 +21,17 @@ public class CourseIndexDTO {
 	private String userName;
 	private String mentorName;
 	private String mentorImage;
-	private List<TrainingEnrollmentDTO> trainees;
+	private TrainingEnrollmentDTO trainee;
 	private String courseStatus;
 
-	public String getCouseId() {
-		return couseId;
+	
+
+	public String getCourseId() {
+		return courseId;
 	}
 
-	public void setCouseId(String couseId) {
-		this.couseId = couseId;
+	public void setCourseId(String courseId) {
+		this.courseId = courseId;
 	}
 
 	public Long getDocumentVersion() {
@@ -122,12 +122,13 @@ public class CourseIndexDTO {
 		this.mentorImage = mentorImage;
 	}
 
-	public List<TrainingEnrollmentDTO> getTrainees() {
-		return trainees;
+	
+	public TrainingEnrollmentDTO getTrainee() {
+		return trainee;
 	}
 
-	public void setTrainees(List<TrainingEnrollmentDTO> trainees) {
-		this.trainees = trainees;
+	public void setTrainee(TrainingEnrollmentDTO trainees) {
+		this.trainee = trainees;
 	}
 
 	public String getCourseStatus() {
