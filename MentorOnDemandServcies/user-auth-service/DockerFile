@@ -1,0 +1,10 @@
+FROM openjdk:8
+RUN apt-get update && apt-get install -y wget
+
+# RUN mkdir /usr/zipkin && cd /usr/zipkin
+
+RUN wget https://search.maven.org/remote_content?g=io.zipkin.java&a=zipkin-server&v=LATEST&c=exec
+
+# RUN  cp /usr/zipkin/zipkin-server-2.12.9-exec.jar /usr/zipkin/zipkin.jar
+
+ENTRYPOINT [ "java","-jar","zipkin-server-2.12.9-exec.jar" ]
